@@ -5,7 +5,7 @@ import "./globals.css";
 const roboto = Roboto({
   variable: "--font-roboto-sans",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
 });
 
 const robotoMono = Roboto_Mono({
@@ -25,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body
-        className={`${roboto.variable} ${robotoMono.variable} antialiased`}
+        className={`${roboto.variable} ${robotoMono.variable} antialiased bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark`}
       >
         {children}
       </body>

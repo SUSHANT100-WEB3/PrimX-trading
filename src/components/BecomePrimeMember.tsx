@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 const BecomePrimeMember: React.FC = () => {
   return (
-    <div className="bg-white rounded-md shadow-md p-4 md:p-6">
+    <div className="bg-white rounded-lg shadow-md p-4 md:p-6 dark:bg-primary dark:shadow-lg">
       {/* Header */}
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Become A Prime Member</h2>
+      <h2 className="text-xl font-bold text-gray-800 dark:text-text-dark mb-4">Become A Prime Member</h2>
 
       {/* Image/Banner */}
-      <div className="w-full h-32 md:h-40 rounded-md mb-4 overflow-hidden">
+      <div className="w-full h-32 md:h-40 rounded-lg mb-4 overflow-hidden shadow-sm dark:shadow">
         <Image
           src="/placeholder-prime-banner.png"
           alt="Become a Prime Member Banner"
@@ -21,10 +21,10 @@ const BecomePrimeMember: React.FC = () => {
       </div>
 
       {/* Unlock Exclusive Features Text */}
-      <p className="font-semibold text-gray-800 mb-3">Unlock exclusive features:</p>
+      <p className="font-semibold text-gray-800 dark:text-text-dark mb-3">Unlock exclusive features:</p>
 
       {/* Features List */}
-      <ul className="list-disc list-inside text-sm text-gray-700 mb-5 space-y-2">
+      <ul className="list-disc list-inside text-sm text-gray-700 dark:text-text-dark mb-5 space-y-2">
         <li className="flex items-center">
           <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -52,7 +52,7 @@ const BecomePrimeMember: React.FC = () => {
       </ul>
 
       {/* Upgrade Now Button */}
-      <button className="w-full py-3 bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold rounded-md shadow-md hover:from-orange-500 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 transition-colors duration-200">
+      <button className="w-full py-3 bg-primary-light dark:bg-primary text-secondary font-semibold rounded-md shadow hover:bg-primary dark:hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-secondary-light focus:ring-opacity-50 transition-colors duration-200">
         Upgrade Now
       </button>
     </div>
