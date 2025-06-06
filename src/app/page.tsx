@@ -60,7 +60,7 @@ export default function Home() {
         display: true,
         text: 'AI Signal Strength by Day',
         color: '#4b5563',
-        font: { size: 14, weight: 'bold' },
+        font: { size: 14, weight: 'bold' as 'bold' },
       },
       tooltip: {
         bodyColor: '#171717',
@@ -69,7 +69,7 @@ export default function Home() {
         borderColor: '#e5e7eb',
         borderWidth: 1,
         titleFont: { weight: 'bold' },
-        bodyFont: { weight: 'medium' },
+        bodyFont: { weight: 'normal' },
         callbacks: {
           label: function(context: any) {
             let label = context.dataset.label || '';
@@ -204,7 +204,7 @@ export default function Home() {
         display: true,
         text: 'Prop Account Equity Curve',
         color: '#4b5563',
-        font: { size: 14, weight: 'bold' },
+        font: { size: 14, weight: 'bold' as 'bold' },
       },
       tooltip: {
         bodyColor: '#171717',
@@ -213,7 +213,7 @@ export default function Home() {
         borderColor: '#e5e7eb',
         borderWidth: 1,
         titleFont: { weight: 'bold' },
-        bodyFont: { weight: 'medium' },
+        bodyFont: { weight: 'normal' },
          callbacks: {
           label: function(context: any) {
             let label = context.dataset.label || '';
