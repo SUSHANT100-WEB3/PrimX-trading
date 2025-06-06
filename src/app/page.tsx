@@ -21,6 +21,7 @@ import {
   Legend,
   BarElement
 } from 'chart.js';
+import annotationPlugin from 'chartjs-plugin-annotation';
 
 ChartJS.register(
   CategoryScale,
@@ -30,7 +31,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  BarElement
+  BarElement,
+  annotationPlugin
 );
 
 export default function Home() {
