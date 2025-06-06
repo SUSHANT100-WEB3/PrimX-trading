@@ -68,8 +68,8 @@ export default function Home() {
         backgroundColor: '#fff',
         borderColor: '#e5e7eb',
         borderWidth: 1,
-        titleFont: { weight: 'bold' },
-        bodyFont: { weight: 'normal' },
+        titleFont: { size: 14, weight: 'bold' as 'bold' },
+        bodyFont: { size: 12, weight: 'normal' as 'normal' },
         callbacks: {
           label: function(context: any) {
             let label = context.dataset.label || '';
@@ -194,7 +194,7 @@ export default function Home() {
     plugins: {
       legend: {
         display: true,
-        position: 'top',
+        position: 'top' as const,
         labels: {
           color: '#4b5563',
           font: { size: 12 },
@@ -212,8 +212,8 @@ export default function Home() {
         backgroundColor: '#fff',
         borderColor: '#e5e7eb',
         borderWidth: 1,
-        titleFont: { weight: 'bold' },
-        bodyFont: { weight: 'normal' },
+        titleFont: { size: 14, weight: 'bold' as 'bold' },
+        bodyFont: { size: 12, weight: 'normal' as 'normal' },
          callbacks: {
           label: function(context: any) {
             let label = context.dataset.label || '';
