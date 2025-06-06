@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         <div className="flex items-center">
           <Image
             src="/PRIMXLOGO.jpg"
-            alt="PrimX-AI powered crypto trade journal and prop firm Logo"
+            alt="PrimX Logo"
             width={80}
             height={32}
             className="w-20 sm:w-24 md:w-28"
@@ -97,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           <div className="hidden sm:block">
             <Image
               src="/PRIMXLOGO.jpg"
-              alt="PrimX-AI powered crypto trade journal and prop firm Logo"
+              alt="PrimX Logo"
               width={24}
               height={24}
               className="w-6 h-6 sm:w-7 sm:h-7"
@@ -119,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden">
             <Image
               src="/PRIMXLOGO.jpg"
-              alt="PrimX-AI powered crypto trade journal and prop firm Logo"
+              alt="PrimX Logo"
               fill
               className="object-cover"
             />

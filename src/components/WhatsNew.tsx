@@ -47,7 +47,7 @@ const WhatsNew: React.FC = () => {
         <div>
           <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-text-dark mb-1.5 sm:mb-2">Hear from our community</h3>
           <p className="text-sm text-gray-700 dark:text-text-dark mb-2 sm:mb-3">
-            Since 2021, PrimX-AI powered crypto trade journal and prop firm has led the prop trading revolution for over 350,000 of our incredible members from over 50+ countries
+            Since 2021, PrimX has led the prop trading revolution for over 350,000 of our incredible members from over 50+ countries
           </p>
           {/* Social proof */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
