@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
         <div className="relative w-24 sm:w-32 h-6 sm:h-8">
           <Image
             src="/PRIMXLOGO.jpg"
-            alt="PrimX Logo"
+            alt="PrimX-AI powered crypto trade journal and prop firm Logo"
             fill
             className="object-contain"
           />
