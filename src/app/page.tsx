@@ -93,37 +93,37 @@ export default function Home() {
       annotation: {
         annotations: {
           aiSignal1: {
-            type: 'line',
-            mode: 'vertical',
-            scaleID: 'x',
+            type: 'line' as const,
+            mode: 'vertical' as const,
+            scaleID: 'x' as const,
             value: 'Day 3',
             borderColor: '#2ecc71',
             borderWidth: 2,
             label: {
               content: 'AI Long Signal',
               enabled: true,
-              position: 'top',
+              position: 'top' as const,
               backgroundColor: 'rgba(46, 204, 113, 0.8)',
               color: '#fff',
-              font: { size: 10, weight: 'bold' },
+              font: { size: 10, weight: 'bold' as const },
               cornerRadius: 4,
               yAdjust: -10,
             }
           },
           aiSignal2: {
-            type: 'line',
-            mode: 'vertical',
-            scaleID: 'x',
+            type: 'line' as const,
+            mode: 'vertical' as const,
+            scaleID: 'x' as const,
             value: 'Day 5',
             borderColor: '#e74c3c',
             borderWidth: 2,
-             label: {
+            label: {
               content: 'AI Short Signal',
               enabled: true,
-              position: 'top',
+              position: 'top' as const,
               backgroundColor: 'rgba(231, 76, 60, 0.8)',
               color: '#fff',
-              font: { size: 10, weight: 'bold' },
+              font: { size: 10, weight: 'bold' as const },
               cornerRadius: 4,
               yAdjust: -10,
             }
