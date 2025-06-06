@@ -1,74 +1,90 @@
 "use client";
 
 import React from 'react';
-import ActivityItem from './ActivityItem'; // Assuming ActivityItem is in the same directory
+import Image from 'next/image';
 
 const ActivityFeed: React.FC = () => {
-  // Placeholder data - replace with actual data fetching later
-  const activities: Array<{ // Explicitly type the array elements
-    type: 'competition' | 'payout';
-    title: string;
-    description: string;
-    status?: string | null; // Allow null
-    amount: string;
-    referenceId?: string | null; // Allow null
-    competitionStarted?: string | null; // Allow null
-    reportConfirmed?: string | null; // Allow null
-    challengePassed?: string | null; // Allow null
-    createdDate: string;
-  }> = [
-    {
-      type: 'competition',
-      title: 'Trading Competition - End of Year Challenge',
-      description: 'Your payout request for account #10572 has been approved.',
-      status: 'In Progress',
-      amount: '$1,520.00',
-      referenceId: '#Px-454735',
-      competitionStarted: '10 Mar',
-      reportConfirmed: '20 Mar',
-      challengePassed: null, // Not applicable for this type
-      createdDate: '14 March 2005', // Based on the image OCR
-    },
-    {
-      type: 'payout',
-      title: 'Congratulations - Payout Successful',
-      description: 'Your payout request for account #8293 has been completed.',
-      status: 'Complete',
-      amount: '$510.00',
-      referenceId: null, // Not applicable for this type
-      competitionStarted: null, // Not applicable
-      reportConfirmed: null, // Not applicable
-      challengePassed: '30 Mar',
-      createdDate: '14 March 2005', // Based on the image OCR
-    },
-    // Add more activity data as needed
-  ];
-
   return (
-    <div className="p-6 bg-white rounded-md shadow-md mb-6">
+    <div className="bg-white rounded-md shadow-md p-4 md:p-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold text-gray-800">Activity Feed</h2>
         <a href="#" className="text-sm text-blue-600 hover:underline">See all</a>
       </div>
 
-      {/* Activity Items Container */}
+      {/* Activity List */}
       <div className="space-y-4">
-        {activities.map((activity, index) => (
-          <ActivityItem
-            key={index}
-            type={activity.type}
-            title={activity.title}
-            description={activity.description}
-            status={activity.status}
-            amount={activity.amount}
-            referenceId={activity.referenceId}
-            competitionStarted={activity.competitionStarted}
-            reportConfirmed={activity.reportConfirmed}
-            challengePassed={activity.challengePassed}
-            createdDate={activity.createdDate}
-          />
-        ))}
+        {/* Activity Item 1 */}
+        <div className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/placeholder-profile.png"
+              alt="User"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-gray-800">
+              <span className="font-medium">Sarah Wilson</span> completed the $10,000 Challenge
+            </p>
+            <p className="text-xs text-gray-500 mt-1">3 hours ago</p>
+          </div>
+        </div>
+
+        {/* Activity Item 2 */}
+        <div className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/placeholder-profile.png"
+              alt="User"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-gray-800">
+              <span className="font-medium">David Brown</span> started a new $25,000 Challenge
+            </p>
+            <p className="text-xs text-gray-500 mt-1">5 hours ago</p>
+          </div>
+        </div>
+
+        {/* Activity Item 3 */}
+        <div className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/placeholder-profile.png"
+              alt="User"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-gray-800">
+              <span className="font-medium">Emma Davis</span> received a payout of $1,500
+            </p>
+            <p className="text-xs text-gray-500 mt-1">1 day ago</p>
+          </div>
+        </div>
+
+        {/* Activity Item 4 */}
+        <div className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <Image
+              src="/placeholder-profile.png"
+              alt="User"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-gray-800">
+              <span className="font-medium">Michael Lee</span> upgraded to Premium Membership
+            </p>
+            <p className="text-xs text-gray-500 mt-1">2 days ago</p>
+          </div>
+        </div>
       </div>
     </div>
   );

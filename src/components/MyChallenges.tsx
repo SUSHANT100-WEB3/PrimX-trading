@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -11,10 +11,9 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartData,
-  ChartOptions,
 } from 'chart.js';
 
+// Register ChartJS components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -26,125 +25,126 @@ ChartJS.register(
 );
 
 const MyChallenges: React.FC = () => {
-  // Placeholder data for the chart - based on the image
-  const chartData: ChartData<'line'> = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  // Sample data for the chart
+  const chartData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [
       {
-        label: 'Balance', // Approximating the label from the image
-        data: [10000, 10500, 11000, 10800, 11500, 12000, 11800, 12500, 13000, 14000, 15000, 16500], // Placeholder data matching the trend
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 0,
-      },{
-        label: 'Equity', // Approximating the label
-        data: [10200, 10700, 11200, 11000, 11700, 12200, 12000, 12700, 13200, 14200, 15200, 16700],
-        borderColor: 'rgba(153, 102, 255, 1)',
-        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-        fill: true,
-        tension: 0.4,
-         pointRadius: 0,
-      }
+        label: 'Performance',
+        data: [65, 59, 80, 81, 56, 55],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+      },
     ],
   };
 
-  const chartOptions: ChartOptions<'line'> = {
+  const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'bottom' as const,
-         labels: {
-          usePointStyle: true,
-         },
-      },
-      title: {
         display: false,
-        text: 'Growth Chart',
       },
-      tooltip: {
-         mode: 'index' as const,
-         intersect: false,
-      }
     },
-     scales: {
+    scales: {
       y: {
-        beginAtZero: false,
-        title: {
-          display: true,
-          text: '$'
+        beginAtZero: true,
+        grid: {
+          display: false,
         },
-        ticks: {
-           callback: function(tickValue: string | number) {
-             return '$' + tickValue.toLocaleString();
-           }
-        }
       },
       x: {
-         grid: {
-           display: false,
-         }
-      }
-    }
+        grid: {
+          display: false,
+        },
+      },
+    },
   };
 
-  const challengeTabs = [
-    { id: 'funded', label: 'Funded #232' },
-    { id: 'evaluation234', label: 'Evaluation #234' },
-    { id: 'evaluation235', label: 'Evaluation #235' },
-    { id: 'competition26', label: 'Competition #26' },
-  ];
-
-  const [activeTab, setActiveTab] = useState(challengeTabs[0].id);
-
   return (
-    <div className="p-6 bg-white rounded-md shadow-md mb-6">
+    <div className="bg-white rounded-md shadow-md p-4 md:p-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">My Challenges</h2>
-        <a href="#" className="text-sm text-blue-600 hover:underline">See all</a>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2 md:mb-0">My Challenges</h2>
+        <button className="px-4 py-2 bg-green-500 text-white text-sm font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          + START A CHALLENGE
+        </button>
       </div>
 
-      {/* Challenge Tabs */}
-      <div className="flex space-x-3 mb-6 overflow-x-auto pb-2">
-        {challengeTabs.map((tab) => (
-          <span
-            key={tab.id}
-            className={`flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full cursor-pointer ${activeTab === tab.id ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </span>
-        ))}
+      {/* Chart */}
+      <div className="h-64 mb-6">
+        <Line data={chartData} options={chartOptions} />
       </div>
 
-      {/* Growth Chart */}
-      <div className="w-full h-64 mb-6">
-         <Line data={chartData} options={chartOptions} />
-      </div>
+      {/* Challenge Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Challenge Card 1 */}
+        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <div className="flex justify-between items-start mb-3">
+            <div>
+              <h3 className="font-semibold text-gray-800">$10,000 Challenge</h3>
+              <p className="text-sm text-gray-500">Phase 1</p>
+            </div>
+            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
+              Active
+            </span>
+          </div>
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Progress</span>
+              <span className="text-gray-800 font-medium">65%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full" style={{ width: '65%' }}></div>
+            </div>
+          </div>
+        </div>
 
-      {/* Challenge Details (Current Profit, Daily Drawdown, etc.) */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700 text-sm">
-        <div>
-          <p className="font-semibold">Challenge Level:</p>
-          <p className="text-green-600 font-medium">Funded</p>
+        {/* Challenge Card 2 */}
+        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <div className="flex justify-between items-start mb-3">
+            <div>
+              <h3 className="font-semibold text-gray-800">$25,000 Challenge</h3>
+              <p className="text-sm text-gray-500">Phase 2</p>
+            </div>
+            <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">
+              Pending
+            </span>
+          </div>
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Progress</span>
+              <span className="text-gray-800 font-medium">30%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '30%' }}></div>
+            </div>
+          </div>
         </div>
-        <div>
-          <p className="font-semibold">Current Profit:</p>
-          <p className="font-medium">$11,687.53</p>
-        </div>
-        <div>
-          <p className="font-semibold">Daily Drawdown:</p>
-          <p className="font-medium">$0.00 <span className="text-gray-500 line-through">($1,000.00)</span></p>
-        </div>
-        <div>
-          <p className="font-semibold">Maximum Drawdown:</p>
-          <p className="font-medium">$0.00 <span className="text-gray-500 line-through">($10,000.00)</span></p>
+
+        {/* Challenge Card 3 */}
+        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <div className="flex justify-between items-start mb-3">
+            <div>
+              <h3 className="font-semibold text-gray-800">$50,000 Challenge</h3>
+              <p className="text-sm text-gray-500">Phase 3</p>
+            </div>
+            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+              Upcoming
+            </span>
+          </div>
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-600">Progress</span>
+              <span className="text-gray-800 font-medium">0%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="bg-blue-500 h-2 rounded-full" style={{ width: '0%' }}></div>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   );
 };
