@@ -313,7 +313,7 @@ export default function Home() {
                 </svg>
                 Total Realized P&L <span className="text-xs text-blue-500 dark:text-blue-400 ml-1">(AI)</span>
               </h3>
-              <p className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-accent-green">+$XX,XXX <span className="text-sm text-gray-500 dark:text-text-secondary">USD</span></p>
+              <p className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-accent-green whitespace-normal break-words">+$XX,XXX <span className="text-sm text-gray-500 dark:text-text-secondary">USD</span></p>
             </div>
             <div className="bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
               <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-text-dark mb-2 flex items-center">
@@ -322,16 +322,16 @@ export default function Home() {
                 </svg>
                 Overall Win Rate <span className="text-xs text-blue-500 dark:text-blue-400 ml-1">(AI)</span>
               </h3>
-              <p className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">XX<span className="text-sm">%</span></p>
+              <p className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 whitespace-normal break-words">XX<span className="text-sm">%</span></p>
             </div>
             <div className="bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
               <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-text-dark mb-2 flex items-center">
-                 <svg className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-0.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg className="w-5 h-5 mr-2 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-                Active Challenges <span className="text-xs text-blue-500 dark:text-blue-400 ml-1">(AI)</span>
+                AI Trading Score <span className="text-xs text-blue-500 dark:text-blue-400 ml-1">(AI)</span>
               </h3>
-              <p className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-text-dark">YYY</p>
+              <p className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400">XXX</p>
             </div>
           </div>
 
