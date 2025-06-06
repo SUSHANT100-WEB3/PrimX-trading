@@ -91,7 +91,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
       </nav>
 
       {/* Tools & Education Section */}
-      <div className="pt-2 sm:pt-4 px-3 sm:px-4 text-gray-500 dark:text-text-secondary text-xs sm:text-sm font-semibold">TOOLS & EDUCATION</div>
+      <div className="pt-0 px-3 sm:px-4 text-gray-500 dark:text-text-secondary text-xs sm:text-sm font-semibold">TOOLS & EDUCATION</div>
       <ul className="space-y-1 px-2 sm:px-4">
         <li>
           <Link href="/tools" className="flex items-center text-sm sm:text-base text-gray-700 dark:text-text-dark hover:bg-gray-100 dark:hover:bg-primary-dark p-2 sm:p-3 rounded-md group">
