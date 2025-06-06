@@ -3,7 +3,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  onMenuClick?: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,8 +37,12 @@ const Header: React.FC = () => {
   };
 
   const handleMenuClick = () => {
-    console.log('Opening menu');
-    // Implement menu logic here
+    if (onMenuClick) {
+      onMenuClick();
+    } else {
+      console.log('Opening menu');
+      // Implement menu logic here
+    }
   };
 
   return (
@@ -45,6 +53,7 @@ const Header: React.FC = () => {
           onClick={handleMenuClick}
           className="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-label="Open menu"
+          title="Open menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
