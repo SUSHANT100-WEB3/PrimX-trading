@@ -7,8 +7,8 @@ import TopPayouts from '../components/TopPayouts';
 import ActivityFeed from '../components/ActivityFeed';
 import Header from '../components/Header';
 import Achievements from '../components/Achievements';
-import WhatsNew from '../components/WhatsNew';
 import BecomePrimeMember from '../components/BecomePrimeMember';
+import AIFeatures from '../components/AIFeatures';
 import { Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -428,8 +428,8 @@ export default function Home() {
                 <Achievements />
               </div>
               <div className="col-span-1 md:col-span-1 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
-                <WhatsNew />
-              </div>
+                 <AIFeatures />
+               </div>
               <div className="col-span-1 md:col-span-1 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
                 <BecomePrimeMember />
               </div>
