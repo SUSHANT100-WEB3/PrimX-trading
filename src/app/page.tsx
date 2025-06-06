@@ -102,7 +102,7 @@ export default function Home() {
             label: {
               content: 'AI Long Signal',
               enabled: true,
-              position: 'top' as const,
+              position: 'end' as const,
               backgroundColor: 'rgba(46, 204, 113, 0.8)',
               color: '#fff',
               font: { size: 10, weight: 'bold' as const },
@@ -120,7 +120,7 @@ export default function Home() {
             label: {
               content: 'AI Short Signal',
               enabled: true,
-              position: 'top' as const,
+              position: 'end' as const,
               backgroundColor: 'rgba(231, 76, 60, 0.8)',
               color: '#fff',
               font: { size: 10, weight: 'bold' as const },
