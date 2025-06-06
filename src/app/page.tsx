@@ -153,103 +153,99 @@ export default function Home() {
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
 
         {/* Dashboard Content */}
-        <div className="p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 text-text-light dark:text-text-dark">
+        <div className="p-2 sm:p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-2 sm:gap-4 md:gap-6 text-text-light dark:text-text-dark">
           {/* AI Insights / Summary (Prominent) */}
-          <div className="col-span-12 lg:col-span-8 bg-white dark:bg-primary p-6 rounded-lg shadow-md border border-blue-200 dark:border-primary-light flex flex-col">
-            <h2 className="text-xl font-bold text-blue-800 dark:text-secondary-light mb-4">AI Insights & Summary</h2>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-8 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-blue-200 dark:border-primary-light flex flex-col">
+            <h2 className="text-lg sm:text-xl font-bold text-blue-800 dark:text-secondary-light mb-3 sm:mb-4">AI Insights & Summary</h2>
             {/* Placeholder for AI insights content - more detailed */}
-            <div className="text-gray-700 dark:text-text-dark flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="text-gray-700 dark:text-text-dark flex-grow grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {/* AI Analysis Summary */}
-              <div>
-                <p className="mb-2"><span className="font-semibold">Recent Analysis:</span> AI detected a potential breakout in BTC/USD based on recent price action and volume.</p>
-                <p className="mb-2"><span className="font-semibold">Recommendation:</span> Consider setting a long position above $45,000 with a target of $48,000.</p>
-                <p><span className="font-semibold">Confidence Score:</span> 85%</p>
+              <div className="space-y-2">
+                <p className="text-sm sm:text-base"><span className="font-semibold">Recent Analysis:</span> AI detected a potential breakout in BTC/USD based on recent price action and volume.</p>
+                <p className="text-sm sm:text-base"><span className="font-semibold">Recommendation:</span> Consider setting a long position above $45,000 with a target of $48,000.</p>
+                <p className="text-sm sm:text-base"><span className="font-semibold">Confidence Score:</span> 85%</p>
               </div>
               {/* Placeholder for AI Chart or Key Signals */}
-              <div className="bg-gray-100 dark:bg-primary-dark rounded-md flex items-center justify-center text-gray-500 dark:text-text-secondary italic p-4">
-                <div className="w-full h-full">
+              <div className="bg-gray-100 dark:bg-primary-dark rounded-md flex items-center justify-center text-gray-500 dark:text-text-secondary italic p-2 sm:p-4">
+                <div className="w-full h-[200px] sm:h-[250px]">
                   <Line data={aiInsightsChartData} options={aiInsightsChartOptions} />
                 </div>
               </div>
             </div>
-             {/* Optional: Add a small AI indicator or icon */}
-            <div className="mt-4 text-right text-sm text-gray-500 dark:text-text-secondary">
+            {/* Optional: Add a small AI indicator or icon */}
+            <div className="mt-3 sm:mt-4 text-right text-xs sm:text-sm text-gray-500 dark:text-text-secondary">
               <span className="inline-block bg-blue-100 dark:bg-primary-light text-blue-800 dark:text-primary-dark text-xs px-2.5 py-0.5 rounded-full">AI Powered</span>
             </div>
           </div>
 
           {/* Key Performance Metrics (Summary Widgets) */}
-          <div className="col-span-12 lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className="bg-white dark:bg-primary p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
-              <h3 className="text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Total P&L</h3>
-              {/* Placeholder for P&L metric */}
-              <p className="text-3xl font-bold text-green-600 dark:text-accent-green">+$XX,XXX</p>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-4">
+            <div className="bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Total P&L</h3>
+              <p className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-accent-green">+$XX,XXX</p>
             </div>
-            <div className="bg-white dark:bg-primary p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
-              <h3 className="text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Win Rate</h3>
-              {/* Placeholder for Win Rate metric */}
-              <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">XX%</p>
+            <div className="bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Win Rate</h3>
+              <p className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">XX%</p>
             </div>
-             <div className="bg-white dark:bg-primary p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
-              <h3 className="text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Trades This Month</h3>
-              {/* Placeholder for Win Rate metric */}
-              <p className="text-3xl font-bold text-gray-800 dark:text-text-dark">YYY</p>
+            <div className="bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-gray-200 dark:border-primary-light">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-600 dark:text-text-dark mb-2">Trades This Month</h3>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-text-dark">YYY</p>
             </div>
-            {/* Add more key metrics here */}
           </div>
 
           {/* Recent Trades / Journal Entries */}
-          <div className="col-span-12 lg:col-span-7 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
-            <h2 className="text-xl font-bold text-gray-800 dark:text-text-dark mb-4">Recent Trades</h2>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-7 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-text-dark mb-3 sm:mb-4">Recent Trades</h2>
             {/* Placeholder for recent trades list or table */}
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto -mx-3 sm:mx-0">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-primary-light">
                 <thead className="bg-gray-100 dark:bg-primary-dark">
                   <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Date</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Symbol</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Type</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Outcome</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">P&L</th>
+                    <th scope="col" className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Date</th>
+                    <th scope="col" className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Symbol</th>
+                    <th scope="col" className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Type</th>
+                    <th scope="col" className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">Outcome</th>
+                    <th scope="col" className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-600 dark:text-text-secondary uppercase tracking-wider">P&L</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white dark:bg-primary divide-y divide-gray-200 dark:divide-primary-light">
                   {/* Example Trade Row (Placeholder) */}
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">BTC/USD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">Long</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">+$XXX</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">BTC/USD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">Long</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">+$XXX</td>
                   </tr>
                    <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">ETH/USD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">Short</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-accent-red font-semibold">Loss</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-accent-red font-semibold">-$XX</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">ETH/USD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">Short</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-red-600 dark:text-accent-red font-semibold">Loss</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-red-600 dark:text-accent-red font-semibold">-$XX</td>
                   </tr>
                   {/* More rows added for detail */}
                    <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">ADA/USD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">Long</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">+$YY</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">ADA/USD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">Long</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">+$YY</td>
                   </tr>
                    <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">XRP/USD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">Short</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-accent-red font-semibold">Loss</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-accent-red font-semibold">-$ZZ</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">XRP/USD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">Short</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-red-600 dark:text-accent-red font-semibold">Loss</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-red-600 dark:text-accent-red font-semibold">-$ZZ</td>
                   </tr>
                    <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">LTC/USD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-text-secondary">Long</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-accent-green font-semibold">+$AA</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900 dark:text-text-dark">YYYY-MM-DD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">LTC/USD</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700 dark:text-text-secondary">Long</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">Win</td>
+                    <td className="px-3 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-green-600 dark:text-accent-green font-semibold">+$AA</td>
                   </tr>
                   {/* More rows... */}
                 </tbody>
@@ -258,8 +254,8 @@ export default function Home() {
           </div>
 
           {/* Account Status (Prop Firm Info) */}
-          <div className="col-span-12 lg:col-span-5 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
-             <h2 className="text-xl font-bold text-gray-800 dark:text-text-dark mb-4">Account Status</h2>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-5 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
+             <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-text-dark mb-3 sm:mb-4">Account Status</h2>
             {/* Placeholder for prop firm account details */}
             <div className="text-gray-700 dark:text-text-dark space-y-3">
               <p><span className="font-semibold">Current Balance:</span> <span className="text-green-600 dark:text-accent-green font-bold">$XXX,XXX</span></p>
@@ -273,7 +269,7 @@ export default function Home() {
               </div>
             </div>
              {/* Placeholder for Account Equity Chart */}
-            <div className="mt-4 h-40 bg-gray-100 dark:bg-primary-dark rounded-md flex items-center justify-center text-gray-500 dark:text-text-secondary italic p-4">
+            <div className="mt-3 sm:mt-4 h-20 bg-gray-100 dark:bg-primary-dark rounded-md flex items-center justify-center text-gray-500 dark:text-text-secondary italic p-2 sm:p-4">
                 <div className="w-full h-full">
                      <Line data={accountStatusChartData} options={accountStatusChartOptions} />
                 </div>
@@ -282,22 +278,22 @@ export default function Home() {
 
           {/* Existing Components - can be rearranged or styled */}
           {/* Example: Integrating existing components */}          
-          <div className="col-span-12 lg:col-span-6 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
              <MyChallenges />
           </div>
-           <div className="col-span-12 lg:col-span-6 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+           <div className="col-span-1 sm:col-span-2 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
               <TopPayouts />
            </div>
-            <div className="col-span-12 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+            <div className="col-span-1 sm:col-span-2 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
               <ActivityFeed />
             </div>
-             <div className="col-span-12 lg:col-span-6 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+             <div className="col-span-1 sm:col-span-2 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
               <Achievements />
             </div>
-             <div className="col-span-12 lg:col-span-6 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+             <div className="col-span-1 sm:col-span-2 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
               <WhatsNew />
             </div>
-             <div className="col-span-12 bg-white dark:bg-primary p-6 rounded-lg shadow-md dark:shadow-lg">
+             <div className="col-span-1 sm:col-span-2 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
               <BecomePrimeMember />
             </div>
 
