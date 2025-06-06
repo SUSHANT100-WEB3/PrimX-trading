@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import PayoutCard from './PayoutCard'; // Assuming PayoutCard is in the same directory
 
