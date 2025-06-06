@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
       <div className="p-3 sm:p-4 flex items-center justify-between border-b border-gray-200 dark:border-primary-light">
         <div className="relative w-24 sm:w-32 h-6 sm:h-8">
           <Image
-            src="/PRIMXLOGO.SVG"
+            src="/PRIMXLOGO.jpg"
             alt="PrimX Logo"
             fill
             className="object-contain"
@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
         {/* User image */}
         <div className="w-10 h-10 sm:w-12 sm:h-12 mr-3 sm:mr-4 flex-shrink-0">
           <Image
-            src="/PRIMXLOGO.SVG"
+            src="/PRIMXLOGO.jpg"
             alt="User Avatar"
             width={48}
             height={48}

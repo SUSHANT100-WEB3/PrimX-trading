@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         {/* PrimX Logo */}
         <div className="flex items-center">
           <Image
-            src="/PRIMXLOGO.SVG"
+            src="/PRIMXLOGO.jpg"
             alt="PrimX Logo"
             width={80}
             height={32}
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           {/* "User available" logo */}
           <div className="hidden sm:block">
             <Image
-              src="/PRIMXLOGO.SVG"
+              src="/PRIMXLOGO.jpg"
               alt="PrimX Logo"
               width={24}
               height={24}
@@ -118,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           {/* Profile Picture (replaced with logo) */}
           <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden">
             <Image
-              src="/PRIMXLOGO.SVG"
+              src="/PRIMXLOGO.jpg"
               alt="PrimX Logo"
               fill
               className="object-cover"
