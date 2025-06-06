@@ -256,27 +256,26 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-background-light dark:bg-background-dark">
-      {isSidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-
-      <div className={`
-        fixed lg:static inset-y-0 left-0 z-30
-        transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:translate-x-0 transition-transform duration-200 ease-in-out
-      `}>
-        <Sidebar onClose={() => setIsSidebarOpen(false)} />
-      </div>
-
-      <div className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
-        <Header onMenuClick={() => setIsSidebarOpen(true)} />
-
-        <div className="p-2 sm:p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-2 sm:gap-4 md:gap-6 text-text-light dark:text-text-dark">
-          <div className="md:col-span-2 lg:col-span-8 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-blue-200 dark:border-primary-light flex flex-col">
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark flex flex-col">
+      <Header onMenuClick={() => setIsSidebarOpen(true)} />
+      <div className="flex flex-1">
+        {/* Sidebar for desktop */}
+        <div className="hidden lg:block w-64 flex-shrink-0">
+          <Sidebar />
+        </div>
+        {/* Sidebar for mobile */}
+        {isSidebarOpen && (
+          <div className="fixed inset-0 z-40 flex lg:hidden">
+            <div className="fixed inset-0 bg-black bg-opacity-40" onClick={() => setIsSidebarOpen(false)} />
+            <div className="relative w-64 bg-white dark:bg-primary shadow-lg z-50">
+              <Sidebar onClose={() => setIsSidebarOpen(false)} />
+            </div>
+          </div>
+        )}
+        {/* Main content */}
+        <main className="flex-1 w-full max-w-screen-2xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+          {/* Example: AI Trading Insights section */}
+          <div className="md:col-span-8 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md border border-blue-200 dark:border-primary-light flex flex-col">
             <h2 className="text-lg sm:text-xl font-bold text-blue-800 dark:text-secondary-light mb-3 sm:mb-4">AI Trading Insights</h2>
             <div className="text-gray-700 dark:text-text-dark flex-grow grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
               <div className="space-y-2 text-sm sm:text-base">
@@ -336,7 +335,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-2 lg:col-span-7 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
+          <div className="col-span-1 md:col-span-7 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
             <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-text-dark mb-3 sm:mb-4">Recent Trade Journal Entries</h2>
             <div className="overflow-x-auto -mx-3 sm:mx-0">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-primary-light">
@@ -434,7 +433,7 @@ export default function Home() {
               <div className="col-span-1 md:col-span-1 lg:col-span-6 bg-white dark:bg-primary p-3 sm:p-4 md:p-6 rounded-lg shadow-md dark:shadow-lg">
                 <BecomePrimeMember />
               </div>
-        </div>
+        </main>
       </div>
     </div>
   );
